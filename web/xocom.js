@@ -3406,6 +3406,7 @@ jQuery.fn.offset = function() {
 	return results;
 };
 })();
+jQuery.noConflict();
 /*
  * XOCom Javascript Source
  *

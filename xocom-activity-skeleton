@@ -13,7 +13,7 @@ if [ ! -d web ]; then
 fi
 
 echo "Updating XOCom libraries"
-for f in XOCom.py web/xo.js; do
+for f in XOCom.py web/xocom.js; do
     echo "--> Fetching $f"
     wget --quiet -O $f "http://github.com/lukec/xocom/tree/master%2F$f?raw=true" 
 done
