@@ -1,0 +1,22 @@
+#!/bin/bash
+set -e
+
+echo "This will download the XOCom sources to your current directory."
+echo
+echo "Hit Ctrl-C to cancel, enter to continue."
+read
+
+if [ ! -d web ]; then
+    echo "Creating initial directory structure"
+    mkdir web
+    echo "Hello World" > web/index.html
+fi
+
+echo "Updating XOCom libraries"
+for f in XOCom.py web/xo.js; do
+    echo "--> Fetching $f"
+    if [ ! -e $f ]; then
+        wget -O $f "http://github.com/lukec/xocom/tree/master%2F$f?raw=true" 
+    fi
+done
+
